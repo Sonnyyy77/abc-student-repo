@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>This is Sonny's Page! Welcome:)</title>
+    <!-- link to js -->
+    <script type="text/javascript" src="script.js"></script>
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div id="number">
+        <!-- for input -->
+        <!-- <input id="squareNum" type="number" name="squareNum" placeholder="put a number" step="1" min="0"/> -->
+        <input id="squareNum" type="number" name="squareNum" placeholder="Put a number" step="1" min="0"
+        onmouseover="this.style.borderColor='white';this.style.backgroundColor='pink'"
+        style="width: 106; height: 21"
+        onmouseout="this.style.borderColor='grey';this.style.backgroundColor='white'"
+        style="border-width:1px;border-color=grey">
+        <!-- submit the number -->
+        <input type="submit" onclick="isPressed()" value="Create Square" id="createSqr">
+      </div>
+      <!-- generate squares -->
+      <div id="mySquare"></div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+/* put the box and button at the center */
+#number{
+  text-align: center;
+  margin-top: 40px;
+}
+/* set background color */
+body{
+  background-image: linear-gradient(to right, hotpink,cyan,darkviolet,violet);
+}
+/* the display rule of squares */
+#mySquare {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 20px;
+}
+/* appearance of squares */
+.sqr {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: indigo;
+}
