@@ -11,7 +11,7 @@
   </head>
   <body>
       <div id="number">
-        <!-- for input -->
+        <!-- for input and some fun effects-->
         <!-- <input id="squareNum" type="number" name="squareNum" placeholder="put a number" step="1" min="0"/> -->
         <input id="squareNum" type="number" name="squareNum" placeholder="Put a number" step="1" min="0"
         onmouseover="this.style.borderColor='white';this.style.backgroundColor='pink'"
@@ -19,7 +19,7 @@
         onmouseout="this.style.borderColor='grey';this.style.backgroundColor='white'"
         style="border-width:1px;border-color=grey">
         <!-- submit the number -->
-        <input type="submit" onclick="isPressed()" value="Create Square" id="createSqr">
+        <input id="createSqr" type="submit" onclick="isPressed()" value="Create Square">
       </div>
       <!-- generate squares -->
       <div id="mySquare"></div>

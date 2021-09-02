@@ -4,7 +4,7 @@ function isPressed(){
   for(let i = 0; i < n; i++){
     let sqrs = document.createElement('div');
     // set the class name property
-    sqrs.className = 'sqr';
+    sqrs.className = 'newSquare';
     // add new generated squares into the div
     document.getElementById("mySquare").appendChild(sqrs);
   }
