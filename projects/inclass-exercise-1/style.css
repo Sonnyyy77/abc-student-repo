@@ -1,0 +1,12 @@
+body{
+  margin: 0;
+  border: 5px black solid;
+}
+
+#valueDisplay{
+  position: relative;
+}
+
+#myRange{
+  position: relative;
+}
