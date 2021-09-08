@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+}
+
+#container-p5 {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+#info {
+	position: absolute;
+  color: white;
+	margin-top: 30px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+  font-size: 2.3em;
+  font-family: cursive;
+}
+
+#big-projects {
+  position: absolute;
+	margin-top: 200px;
+  /* margin: auto; */
+	width: 100%;
+	z-index: 100;
+  display: block;
+  /* display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 1px */
+  font-size: 2.3em;
+  font-family: monospace;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  /* max-width: 500px; */
+  text-align: center;
+}
+
+#big-projects a{
+  color: mediumpurple;
+  /* font-size: 2em; */
+}
+
+#big-projects a:hover{
+  background-color: blueviolet;
+  color: indigo;
+}
+
+span {
+    display: inline-block;
+    padding: 0em 2em;
+}
