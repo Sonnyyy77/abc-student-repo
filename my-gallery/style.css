@@ -48,6 +48,35 @@ html, body {
   color: indigo;
 }
 
+#small-projects {
+  position: absolute;
+	margin-top: 300px;
+  margin-left: 350px;
+  /* margin: auto; */
+	/* width: 100%; */
+	z-index: 100;
+  display: block;
+  /* display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 1px */
+  font-size: 1.5em;
+  font-family: sans-serif;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  /* max-width: 500px; */
+  text-align: center;
+}
+
+#small-projects a{
+  color: thistle;
+  /* font-size: 2em; */
+}
+
+#small-projects a:hover{
+  background-color: plum;
+  color: indigo;
+}
+
 span {
     display: inline-block;
     padding: 0em 2em;
