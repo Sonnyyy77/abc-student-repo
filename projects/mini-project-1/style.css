@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    background-color: black;
+}
+
+#myRange{
+  text-align: center;
+  margin-top: 40px;
+  /* width: 100%; */
+}
+
+#changeRange{
+  width:300px;
+}
+
+#myFlowers {
+  margin-top: 30px;
+  display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+}
+
+
+img{
+  position: absolute;
+  width: 20%;
+  display: inline-block;
+}
