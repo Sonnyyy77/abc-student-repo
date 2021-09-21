@@ -43,6 +43,7 @@ function extend(){
   btn.style.top=y+"px";
   x = Math.random()*0.9*sw;
   y = Math.random()*0.75*sh;
+  timeleft += 5;
   // console.log(x, y);
   // new_script.timeleft += 5;
   // console.log(new_script.timeleft);
@@ -51,3 +52,34 @@ function extend(){
 button.addEventListener("click", openManyWindows);
 btn.addEventListener("click", extend);
 // console.log(timer);
+
+
+//////////////
+let timeleft= 11;
+let tx = document.getElementById("text");
+// export timeleft;
+// let timer;
+
+let timers = setInterval(function(){
+  timeleft--;
+  // console.log(timeleft);
+  if (timeleft>=10){
+    tx.textContent = "00:00:"+timeleft;
+    // tx.innerHTML = "time";
+    // console.log("timeleft>=10");
+  }
+  if (timeleft<10){
+    // tx.innerHTML = "time";
+    tx.textContent = "00:00:0"+timeleft;
+    // console.log("timeleft<10");
+  }
+  if(timeleft<=-1){
+    clearInterval(timers);
+    timeleft= 0;
+  }
+},1000);
+
+function extend(){
+  timeleft+= 5;
+}
+// btn.addEventListener("click", extend);
