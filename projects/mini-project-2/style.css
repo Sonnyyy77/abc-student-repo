@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    background-color: white;
+}
+
+#myButton {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#extend {
+  position: absolute;
+  margin-top: 150px;
+  /* margin-bottom: 100px; */
+}

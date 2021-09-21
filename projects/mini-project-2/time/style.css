@@ -1,0 +1,11 @@
+html, body {
+    margin: 0;
+    background-color: white;
+}
+
+#text {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 40px;
+}
