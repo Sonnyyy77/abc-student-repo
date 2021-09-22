@@ -1,4 +1,5 @@
 let button = document.getElementById("button");
+let buttonMain = document.getElementById("myButton");
 // let newt = document.getElementById("text");
 // newt.src = "time/script.js";
 
@@ -22,19 +23,35 @@ let y = Math.random()*0.75*sh;
 // new_script.setAttribute("src", "script1.js");
 // document.body.appendChild(new_script);
 
+function secondsToString(seconds){
+  // from: https://stackoverflow.com/a/25279340
+  return new Date(seconds * 1000).toISOString().substr(11, 8);
+}
+
+let secondsLeft = 10;
+
 function timer() {
-  let win = window.open("index1.html", "_blank", "width=300, height=150, left="+left,"top=100");
-  win.addEventListener("load", ()=>{
-    setTimeout(()=>{
-      win.close();
-    }, 11000);
-  })
+  let win = window.open("clock/index.html", "_blank", "width=300, height=150, left="+left,"top=100");
+
+  setInterval(()=>{
+    let text = secondsToString(secondsLeft)
+    win.changeText(text);
+    secondsLeft-=0.5;
+  }, 500)
+
+
+  // win.addEventListener("load", ()=>{
+  //   setTimeout(()=>{
+  //     win.close();
+  //   }, 11000);
+  // })
 }
 
 function openManyWindows(){
   for(let i = 0; i < 1; i++){
     timer();
   }
+  buttonMain.style.display = 'none';
 }
 
 function extend(){
@@ -43,6 +60,7 @@ function extend(){
   btn.style.top=y+"px";
   x = Math.random()*0.9*sw;
   y = Math.random()*0.75*sh;
+  secondsLeft+=5;
   // console.log(x, y);
   // new_script.timeleft += 5;
   // console.log(new_script.timeleft);
