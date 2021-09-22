@@ -1,5 +1,6 @@
 let button = document.getElementById("button");
 let buttonMain = document.getElementById("myButton");
+let page = document.getElementById("page");
 // let newt = document.getElementById("text");
 // newt.src = "time/script.js";
 
@@ -36,9 +37,20 @@ function timer() {
   setInterval(()=>{
     let text = secondsToString(secondsLeft)
     win.changeText(text);
-    secondsLeft-=0.5;
-  }, 500)
+    secondsLeft-=1;
 
+    if (secondsLeft <= -1) {
+      secondsLeft = 0;
+      win.close();
+      btn.style.display = "none";
+      page.style.backgroundColor = "black";
+      //console.log(secondsLeft);
+    }
+
+  }, 1000)
+
+
+  //console.log(secondsLeft);
 
   // win.addEventListener("load", ()=>{
   //   setTimeout(()=>{
@@ -47,11 +59,12 @@ function timer() {
   // })
 }
 
+
 function openManyWindows(){
   for(let i = 0; i < 1; i++){
     timer();
   }
-  buttonMain.style.display = 'none';
+  buttonMain.style.display = "none";
 }
 
 function extend(){
@@ -60,7 +73,7 @@ function extend(){
   btn.style.top=y+"px";
   x = Math.random()*0.9*sw;
   y = Math.random()*0.75*sh;
-  secondsLeft+=5;
+  secondsLeft+=2;
   // console.log(x, y);
   // new_script.timeleft += 5;
   // console.log(new_script.timeleft);
@@ -68,4 +81,4 @@ function extend(){
 
 button.addEventListener("click", openManyWindows);
 btn.addEventListener("click", extend);
-// console.log(timer);
+// console.log(secondsLeft);
