@@ -14,7 +14,14 @@ let key = [65.41, 69.30, 73.42, 77.78,
   659.25, 698.46, 739.99, 783.99,
   830.61, 880.00, 932.33, 987.77,
   1046.50];
-
+let chord = [];
+chord[0]=[440.00, 554.37, 659.25, 880.00];
+chord[1]=[493.88, 622.25, 739.99, 987.77];
+chord[2]=[523.25, 659.25, 783.99, 1046.50];
+chord[3]=[293.66, 369.99, 440.00, 587.33];
+chord[4]=[329.63, 415.30, 493.88, 659.25];
+chord[5]=[349.23, 440.00, 523.25, 698.46];
+chord[6]=[392.00, 493.88, 587.33, 783.99];
 
 
 // selecting the two new inputs
@@ -108,6 +115,21 @@ on.addEventListener("click", ()=>{
   // gain.gain.value = 1;
   // let us stay true to the volume slider:
   gain.gain.value = volumeInput.value/100;
+
+});
+
+let i;
+//i = Math.floor(Math.random() * (7 - 0) + 0);
+//console.log(i);
+
+auto.addEventListener("click", ()=>{
+  i = Math.floor(Math.random() * (7 - 0) + 0);
+  oscillator1.frequency.value = chord[i][0];
+  oscillator2.frequency.value = chord[i][1];
+  oscillator3.frequency.value = chord[i][2];
+  oscillator4.frequency.value = chord[i][3];
+
+  console.log(oscillator1.frequency.value);
 
 });
 
