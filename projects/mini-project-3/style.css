@@ -9,6 +9,8 @@ html, body {
   position:relative;
   vertical-align: middle; */
   margin-top: 50px;
+  margin-left: 20px;
+  z-index: 1000;
 }
 
 
@@ -23,8 +25,23 @@ html, body {
   /* transform: rotate(90deg); */
 }
 
+#m {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+#music {
+  margin-top: 90px;
+  z-index: 2;
+  transform: scale(2);
+}
+
 #frequency {
   text-align: center;
   /* margin-top: 100px; */
+  /* position: relative; */
+  /* top: -100px; */
   transform: rotate(90deg);
+  z-index: 9;
 }
