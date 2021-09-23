@@ -18,6 +18,7 @@ html, body {
 
 #volumeInput {
   display: none;
+  margin: 0;
 }
 
 #control {
