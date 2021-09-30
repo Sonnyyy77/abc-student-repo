@@ -1,0 +1,14 @@
+body{
+  margin: 0;
+  background-color: black;
+}
+#bug{
+   text-align: center;
+
+ }
+
+img{
+  width: 50%;
+  height: 50%;
+  /* margin: 50px; */
+}

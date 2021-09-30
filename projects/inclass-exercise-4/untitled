@@ -1,0 +1,14 @@
+javascript:(function (){
+  let imgs = document.getElementsByTagName("img");
+  for(let i = 0; i < imgs.length; i++){
+    imgs[i].src = "https://images.squarespace-cdn.com/content/v1/53a60116e4b0488fb14d69d8/1597336605370-5BEYBPCYKAZEMWC4J7KQ/image-asset.jpeg"
+  }
+})()
+
+
+function makeblue(){
+    let p = document.getElementsByTagName("p");
+    for(let i = 0; i < p.length; i++){
+        p[i].style.color = "blue";
+    }
+}
