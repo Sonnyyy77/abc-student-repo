@@ -5,7 +5,7 @@ let button = document.getElementById("button");
 let sw = screen.width;
 let sh = screen.height;
 let start;
-//let caught = false;
+let caught = false;
 
 let botX = sw-248;
 let botY = sh-350.8;
@@ -43,6 +43,7 @@ function showFireflies() {
 
       fly.addEventListener("load", ()=>{
         fly.mailbox(bottle.addOne);
+
         let interval = setInterval(()=>{
           //ranX+=speed;
           x = ranX + xAmpl*Math.sin(20*Math.sin(t/3))*(Math.sin(10+t)+0.2)*Math.cos(t);
@@ -72,9 +73,16 @@ function showFireflies() {
         }, 50)
       })
 
+      // fly.addEventListener("click", ()=>{
+      //   fly.mailbox(bottle.addOne);
+      //   fly.close();
+      //   caught = true;
+      // })
+
 
       setTimeout(()=>{
         // main = true;
+        //console.log("trying to turn fly into local, checking if fly is still defined after catchin it", fly);
         fly.close();
         // make fly appear in main window
         let x = 0//Math.random()*window.innerWidth;
@@ -101,7 +109,7 @@ function showFireflies() {
 
 
 
-        if (!fly.caught){
+        if (fly.window != null){
         localFlies.push({
           x: x,
           y: y,
@@ -179,14 +187,14 @@ function showFireflies() {
     //console.log(time);
     setTimeout(()=>{
       clearInterval(start);
-    }, 10000);
+    }, 20000);
 
   myButton.style.display = "none";
 })
 }
 
-let maxFlies = 5;
-let flyCount = 0;
+// let maxFlies = 5;
+// let flyCount = 0;
 
 /*
 function createExternalFlies(){
@@ -248,24 +256,8 @@ setInterval(()=>{
       localFlies[i].speedY *= -1;
     }
 
-
-    // if (opacity<=1 && opacity >0) {
-    //   localFlies[i].opacity-=0.05;
-    // }
-    // else if(opacity<=0) {
-    //   localFlies[i].opacity+=0.05;
-    // }
-
   }
 
-
-  //showFireflies.fly.addEventListener("click", ()=>{
-  //   for (let i = localFlies.length - 1; i >= 0; i--) {
-  //   localFlies.splice(i, 1);
-  // }
-  // })
-
-  //console.log(localFlies.length);
 
 }, 50)
 

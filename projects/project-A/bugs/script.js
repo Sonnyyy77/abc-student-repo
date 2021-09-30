@@ -1,6 +1,6 @@
 let img2 = "firefly2.png";
 let body = document.getElementById("body");
-//let caught = false;
+let caught = false;
 // let wins = [];
 
 let catchThem;
@@ -12,7 +12,7 @@ function mailbox(firefly){
 window.addEventListener("click", ()=>{
   catchThem();
   window.close();
-  //caught = true;
+  caught = true;
   //win2.document.getElementById("bottle").appendChild(img);
   // ranX+=0;
   // ranY+=0;
