@@ -5,7 +5,7 @@ let button = document.getElementById("button");
 let sw = screen.width;
 let sh = screen.height;
 let start;
-let main = false;
+//let caught = false;
 
 let botX = sw-248;
 let botY = sh-350.8;
@@ -25,17 +25,12 @@ function showFireflies() {
   bottle.addEventListener("load", ()=>{
 
     start = setInterval(()=>{
-      //let ranX;
-      // ranX = map(ranX, 0, screen.width, 0, Math.random()*sw - 248);
       let ranX = Math.random()*((sw-250)-10)+10;
       let ranY = Math.random()*((sh-350.8)-40)+40;
       let speed = Math.random()*(10-5)+5;
       let fly = window.open("bugs/index.html", "_blank", "width=82.67, height=116.93, left="+ranX+", top="+ranY);
-      // fly.focus();
-      // window.blur();
 
       // let move = false;
-
 
       //http://www.mouchette.org/
       let t = 0.0;
@@ -73,42 +68,81 @@ function showFireflies() {
         		if (accel==0.00) up = true;
         	}
         	t += accel;
-          // if (ranX <= 0 || ranX >= (sw-124)){
-          //   speed*=-1;
-          // }
+
         }, 50)
       })
 
+
       setTimeout(()=>{
+        // main = true;
         fly.close();
         // make fly appear in main window
         let x = 0//Math.random()*window.innerWidth;
         let y = Math.random()*window.innerHeight;
         let localFly = document.createElement('img');
+        // let opacity = 1;
+
+        // if (opacity<=1 && opacity >0) {
+        //   opacity--;
+        // }
+        // else if(opacity<=0) {
+        //   opacity++;
+        // }
+
+
         localFly.src = img;
         localFly.style.left = x+"px";
         localFly.style.top = y+"px";
         localFly.style.position="absolute";
         localFly.style.width = "5%";
         localFly.style.height = "5%";
+        // localFly.style.opacity = opacity;
         firefly.appendChild(localFly);
 
+
+
+        if (!fly.caught){
         localFlies.push({
           x: x,
           y: y,
           img: localFly,
-          speed: 1 + Math.random()*3
+          speedX: 1 + Math.random()*3,
+          speedY: 1 + Math.random()*3
+          // opacity: opacity
         });
-        main = true;
-        console.log(localFlies[0])
+      }
+
+        // fly.addEventListener("click", ()=>{
+        //   for (let i = localFlies.length - 1; i >= 0; i--) {
+        //   localFlies.splice(i, 1);
+        // }
+        // })
+
+        // fly.addEventListener("click", ()=>{
+        //   for (let i = particle.length - 1; i >= 0; i--) {
+        //   localFlies.splice(i, 1);
+        // }
+        // console.log(localFlies.length);
+        // })
+
+        //console.log(localFlies[0])
       }, 5000);
+
+
+      // fly.addEventListener("click", ()=>{
+      //   for (let i = localFlies.length - 1; i >= 0; i--) {
+      //   localFlies.splice(i, 1);
+      // }
+      // })
+
+      //console.log(localFlies.length);
 
       externalFlies.push({
         x: ranX,
         y: ranY,
-        speed: ranSpeed,
+        //speed: ranSpeed,
         name: "harry",
-        win: flyWindow
+        win: fly
       })
 
 
@@ -145,7 +179,7 @@ function showFireflies() {
     //console.log(time);
     setTimeout(()=>{
       clearInterval(start);
-    }, 4000);
+    }, 10000);
 
   myButton.style.display = "none";
 })
@@ -190,26 +224,49 @@ function createExternalFlies(){
 // let bottle = window.open("bottle/index.html", "_blank", "width=350, height=350, left="+botX+", top="+botY);
 // bottle.addEventListener("load", createExternalFlies)
 
-
-let begin;
 setInterval(()=>{
   //
   for(let i =0; i< externalFlies.length; i++){
     // move external flies here
-
+    // button.addEventListener("click", ()=>{
+    //
+    // })
   }
-
-
+  //let opacity = 1;
   // local flies
   for(let i =0; i< localFlies.length; i++){
     //move local flies
-    localFlies[i].x = localFlies[i].x + localFlies[i].speed;
+    localFlies[i].x = localFlies[i].x + localFlies[i].speedX;
+    localFlies[i].y = localFlies[i].y + localFlies[i].speedY;
     localFlies[i].img.style.left = localFlies[i].x+"px";
+    localFlies[i].img.style.top = localFlies[i].y+"px";
+    // localFlies[i].img.style.opacity = localFlies[i].opacity;
     if(localFlies[i].x > window.innerWidth || localFlies[i].x < 0){
-      localFlies[i].speed *= -1;
+      localFlies[i].speedX *= -1;
+    }
+    if(localFlies[i].y > window.innerHeight || localFlies[i].y < 0){
+      localFlies[i].speedY *= -1;
     }
 
+
+    // if (opacity<=1 && opacity >0) {
+    //   localFlies[i].opacity-=0.05;
+    // }
+    // else if(opacity<=0) {
+    //   localFlies[i].opacity+=0.05;
+    // }
+
   }
+
+
+  //showFireflies.fly.addEventListener("click", ()=>{
+  //   for (let i = localFlies.length - 1; i >= 0; i--) {
+  //   localFlies.splice(i, 1);
+  // }
+  // })
+
+  //console.log(localFlies.length);
+
 }, 50)
 
 
