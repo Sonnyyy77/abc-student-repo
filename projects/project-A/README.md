@@ -1,5 +1,5 @@
 # Browser Fireflies
-![Preview](projects/project-A/Preview.gif)
+![Preview](https://github.com/Sonnyyy77/abc-student-repo/blob/master/projects/project-A/Preview.gif)
 
 ## Description
 This project is intended to mimic a scenario in the forest at night where many fireflies are flying around on your desktop. You can try to catch them and put them into your bottle by clicking those flying popup windows. You can just let them fly freely, and after a while the popup windows will disappear and those fireflies will fly into the main window and live there happily ever after. You only get the chance to catch them at the first 5 seconds they show up on your desktop as a popup window. Once they fly into the main window, you can never catch them again.
