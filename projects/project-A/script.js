@@ -24,6 +24,8 @@ function showFireflies() {
   let bottle = window.open("bottle/index.html", "_blank", "width=350, height=350, left="+botX+", top="+botY);
   bottle.addEventListener("load", ()=>{
 
+    //bottle.focus();
+
     start = setInterval(()=>{
       let ranX = Math.random()*((sw-250)-10)+10;
       let ranY = Math.random()*((sh-350.8)-40)+40;
@@ -42,6 +44,8 @@ function showFireflies() {
     	let yAmpl = sh/3;
 
       fly.addEventListener("load", ()=>{
+        //fly.focus();
+
         fly.mailbox(bottle.addOne);
 
         let interval = setInterval(()=>{
@@ -102,7 +106,7 @@ function showFireflies() {
         localFly.style.left = x+"px";
         localFly.style.top = y+"px";
         localFly.style.position="absolute";
-        localFly.style.width = "5%";
+        localFly.style.width = "3%";
         localFly.style.height = "5%";
         // localFly.style.opacity = opacity;
         firefly.appendChild(localFly);
