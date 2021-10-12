@@ -5,7 +5,7 @@ let n = false;
 let p = document.getElementsByTagName("p");
 let d = document.getElementsByTagName("div");
 
-// let start = setInterval(changeColor, 100);
+let start = setInterval(changeColor, 100);
 
 function changeColor(){
   let p = document.getElementsByTagName("p");
