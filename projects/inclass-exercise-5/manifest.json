@@ -1,0 +1,16 @@
+{
+  "name": "CODING",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "Eyes.PNG",
+    "default_popup": "popup/popup.html"
+  },
+  "background":{
+    "scripts": ["background.js"]
+  },
+  "permissions":[
+    "storage"
+  ]
+}
