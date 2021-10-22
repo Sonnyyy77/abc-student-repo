@@ -1,0 +1,16 @@
+{
+  "name": "Have you studied today?",
+  "description": "Use it to count your study and rest time",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "Glass.PNG",
+    "default_popup": "popup/popup.html"
+  },
+  "background":{
+    "scripts": ["background.js"]
+  },
+  "permissions":[
+    "storage"
+  ]
+}
