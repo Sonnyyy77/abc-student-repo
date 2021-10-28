@@ -19,9 +19,6 @@
   "web_accessible_resources": [
        "cute-animated.gif"
    ],
-  "background":{
-    "scripts": ["background.js"]
-  },
   "permissions":[
     "storage"
   ]
