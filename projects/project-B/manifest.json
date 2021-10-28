@@ -1,6 +1,6 @@
 {
   "name": "PARASITE",
-  "description": "This is your new browser pet🐾",
+  "description": "Feed me with your words🐾",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
