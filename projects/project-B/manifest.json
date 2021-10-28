@@ -1,0 +1,28 @@
+{
+  "name": "PARASITE",
+  "description": "This is your new browser pet🐾",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentscript.js"],
+      "css":["style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+       "cute-animated.gif"
+   ],
+  "background":{
+    "scripts": ["background.js"]
+  },
+  "permissions":[
+    "storage"
+  ]
+}
