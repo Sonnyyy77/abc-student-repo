@@ -1,0 +1,321 @@
+body{
+  background-color: #1a472a;
+  color: white;
+}
+
+@font-face {
+  font-family: 'HARRYP';
+  src: url('HARRYP__.TTF');
+}
+
+#main2 {
+  /* margin: auto; */
+  text-align: center;
+  font-family: HARRYP;
+  font-size: 30px;
+}
+
+#spell2{
+  font-family: HARRYP;
+  font-size: 25px;
+}
+
+#tt{
+  margin: auto;
+  width: 250px;
+}
+
+#tips{
+  font-size: 25px;
+  background-color: #1a472a;
+  opacity: 0;
+}
+
+#tips:hover{
+  opacity: 100;
+  transition-duration: 2s;
+}
+
+#dd{
+  margin: auto;
+  width: 280px;
+}
+
+#dra{
+  font-size: 25px;
+  background-color: #1a472a;
+  opacity: 0;
+}
+
+#dra:hover{
+  opacity: 100;
+  transition-duration: 2s;
+}
+
+#button2{
+  border-radius: 12px;
+  padding: 0px 24px;
+  transition-duration: 0.4s;
+}
+
+#button2:hover{
+  background-color: #1a472a; /* Green */
+  color: white;
+}
+
+#bigdiv2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#letter2 {
+  text-align: center;
+}
+
+#div01{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div02{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div03{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div04{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div05{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div06{
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div07{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div08{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#div09{
+  /* text-align: center; */
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 8px;
+  /* margin-top: 10px; */
+  display: inline-block;
+  border: 2px solid #aaaaaa;
+}
+
+#A{
+  /* position: relative; */
+  /* top: 500px;
+  left: 100px;*/
+  margin: 20px;
+  display: inline-block;
+}
+
+#B{
+  /* position: absolute; */
+  /* top: 500px;
+  left: 300px;*/
+  margin: 20px;
+  display: inline-block;
+}
+
+#C{
+  /* position: absolute;
+  top: 500px;
+  left: 500px; */
+  margin: 20px;
+  display: inline-block;
+}
+
+#D{
+  /* position: absolute;
+  top: 500px;
+  left: 700px; */
+  margin: 20px;
+  display: inline-block;
+}
+
+#E{
+  /* position: absolute;
+  top: 500px;
+  left: 900px; */
+  margin: 20px;
+  display: inline-block;
+}
+
+#F{
+  /* position: absolute;
+  top: 500px;
+  left: 1100px; */
+  margin: 20px;
+  display: inline-block;
+}
+
+#G{
+  /* position: absolute;
+  top: 500px;
+  left: 1300px; */
+  margin: 20px;
+  display: inline-block;
+}
+
+#H{
+  margin: 20px;
+  display: inline-block;
+}
+
+#I{
+  margin: 20px;
+  display: inline-block;
+}
+
+#J{
+  margin: 20px;
+  display: inline-block;
+}
+
+#K{
+  margin: 20px;
+  display: inline-block;
+}
+
+#L{
+  margin: 20px;
+  display: inline-block;
+}
+
+#M{
+  margin: 20px;
+  display: inline-block;
+}
+
+#N{
+  margin: 20px;
+  display: inline-block;
+}
+
+#O{
+  margin: 20px;
+  display: inline-block;
+}
+
+#P{
+  margin: 20px;
+  display: inline-block;
+}
+
+#Q{
+  margin: 20px;
+  display: inline-block;
+}
+
+#R{
+  margin: 20px;
+  display: inline-block;
+}
+
+#S{
+  margin: 20px;
+  display: inline-block;
+}
+
+#T{
+  margin: 20px;
+  display: inline-block;
+}
+
+#U{
+  margin: 20px;
+  display: inline-block;
+}
+
+#V{
+  margin: 20px;
+  display: inline-block;
+}
+
+#W{
+  margin: 20px;
+  display: inline-block;
+}
+
+#X{
+  margin: 20px;
+  display: inline-block;
+}
+
+#Y{
+  margin: 20px;
+  display: inline-block;
+}
+#Z{
+  margin: 20px;
+  display: inline-block;
+}

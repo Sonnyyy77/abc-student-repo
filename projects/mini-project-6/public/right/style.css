@@ -1,0 +1,34 @@
+body{
+  background-color: #1a472a;
+  color: white;
+}
+
+@font-face {
+  font-family: 'HARRYP';
+  src: url('HARRYP__.TTF');
+}
+
+#congrats {
+  /* margin: auto; */
+  margin-top: 140px;
+  text-align: center;
+  font-family: HARRYP;
+  font-size: 40px;
+  /* color: linear-gradient(to top, #000000, #1a472a, #2a623d) */
+}
+
+#button{
+  border-radius: 12px;
+  padding: 0px 50px;
+  transition-duration: 0.4s;
+}
+
+#button:hover{
+  background-color: #1a472a; /* Green */
+  color: white;
+}
+
+#spell{
+  font-family: HARRYP;
+  font-size: 30px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dragstart_handler(ev) {
+      ev.dataTransfer.dropEffect = "copy";
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+  </head>
+  <body>
+    <!-- <h1>🐡</h1>
+    <p>try again:</p> -->
+
+    <!-- <input id="secret" type="text" placeholder="🤫"></input> -->
+    <!-- <button id="button">Whisper</button> -->
+    <div id="main2">
+      <h1>Oops! Wrong Guess. Try Again🧐</h2>
+      <!-- <input id="answer" type="text" placeholder="🤫"></input> -->
+      <button id="button2"><p id="spell2">Alohomora</p></button>
+      <div id="tt">
+        <p id="tips">Alohomora means "opening a lock"</p>
+      </div>
+      <div id="dd">
+        <p id="dra">Drag the letter and put it into the box</p>
+      </div>
+    </div>
+
+    <div id="bigdiv2">
+      <div id="div01" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div02" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div03" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div04" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div05" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div06" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div07" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div08" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="div09" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+
+    <!-- <br> -->
+
+
+    <div id="letter2" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img id="A" src="A.png" draggable="true" ondragstart="drag(event)">
+      <img id="B" src="B.png" draggable="true" ondragstart="drag(event)">
+      <img id="C" src="C.png" draggable="true" ondragstart="drag(event)">
+      <img id="D" src="D.png" draggable="true" ondragstart="drag(event)">
+      <img id="E" src="E.png" draggable="true" ondragstart="drag(event)">
+      <img id="F" src="F.png" draggable="true" ondragstart="drag(event)">
+      <img id="G" src="G.png" draggable="true" ondragstart="drag(event)">
+      <img id="H" src="H.png" draggable="true" ondragstart="drag(event)">
+      <img id="I" src="I.png" draggable="true" ondragstart="drag(event)">
+      <img id="J" src="J.png" draggable="true" ondragstart="drag(event)">
+      <img id="K" src="K.png" draggable="true" ondragstart="drag(event)">
+      <img id="L" src="L.png" draggable="true" ondragstart="drag(event)">
+      <img id="M" src="M.png" draggable="true" ondragstart="drag(event)">
+      <img id="N" src="N.png" draggable="true" ondragstart="drag(event)">
+      <img id="O" src="O.png" draggable="true" ondragstart="drag(event)">
+      <img id="P" src="P.png" draggable="true" ondragstart="drag(event)">
+      <img id="Q" src="Q.png" draggable="true" ondragstart="drag(event)">
+      <img id="R" src="R.png" draggable="true" ondragstart="drag(event)">
+      <img id="S" src="S.png" draggable="true" ondragstart="drag(event)">
+      <img id="T" src="T.png" draggable="true" ondragstart="drag(event)">
+      <img id="U" src="U.png" draggable="true" ondragstart="drag(event)">
+      <img id="V" src="V.png" draggable="true" ondragstart="drag(event)">
+      <img id="W" src="W.png" draggable="true" ondragstart="drag(event)">
+      <img id="X" src="X.png" draggable="true" ondragstart="drag(event)">
+      <img id="Y" src="Y.png" draggable="true" ondragstart="drag(event)">
+      <img id="Z" src="Z.png" draggable="true" ondragstart="drag(event)">
+
+    </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
