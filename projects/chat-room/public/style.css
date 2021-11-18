@@ -1,12 +1,8 @@
-/* :root{
-  --borderThinkness:4px;
-} */
-
 body{
   margin:0;
   font-weight: bold;
   font-family: sans-serif;
-  background-color: silver;
+  background-color: blue;
 }
 
 #button1{
@@ -22,14 +18,11 @@ body{
   z-index: 1000;
 }
 
-.b{
-  z-index: 1000;
-}
-
-.emoji{
-  z-index: 10;
-}
-
 emoji1, emoji2, emoji3, emoji4, emoji5, emoji6, emoji7, emoji8, emoji9{
   z-index: 100;
+}
+
+p{
+  margin: 0;
+  font-size: 16px;
 }

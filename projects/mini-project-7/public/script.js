@@ -5,6 +5,12 @@ let button = document.getElementById("generate");
 let emoji1 = document.getElementById("emoji1");
 let emoji2 = document.getElementById("emoji2");
 let emoji3 = document.getElementById("emoji3");
+let emoji4 = document.getElementById("emoji4");
+let emoji5 = document.getElementById("emoji5");
+let emoji6 = document.getElementById("emoji6");
+let emoji7 = document.getElementById("emoji7");
+let emoji8 = document.getElementById("emoji8");
+let emoji9 = document.getElementById("emoji9");
 let body = document.getElementById("body");
 let num;
 
@@ -27,8 +33,26 @@ function pushEmoji(emo){
   if (emo == "💖"){
     emoji2.appendChild(p);
   }
-  if (emo == "🔥"){
+  if (emo == "💍"){
     emoji3.appendChild(p);
+  }
+  if (emo == "🍼"){
+    emoji4.appendChild(p);
+  }
+  if (emo == "🪁"){
+    emoji5.appendChild(p);
+  }
+  if (emo == "🎒"){
+    emoji6.appendChild(p);
+  }
+  if (emo == "🎓"){
+    emoji7.appendChild(p);
+  }
+  if (emo == "🚑"){
+    emoji8.appendChild(p);
+  }
+  if (emo == "⚰️"){
+    emoji9.appendChild(p);
   }
 }
 
@@ -39,25 +63,109 @@ socket.on("usernumber", (usernumber)=>{
     pushEmoji("😮");
     emoji2.innerHTML = "";
     emoji3.innerHTML = "";
-    body.style.backgroundColor = "blue";
-    // let click1 = emoji1.childElementCount;
-    // socket.emit('emoji1', click1);
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "silver";
   }
   if (num == 2) {
     pushEmoji("💖");
     emoji1.innerHTML = "";
     emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
     body.style.backgroundColor = "pink";
-    // let click2 = emoji2.childElementCount;
-    // socket.emit('emoji2', click2);
   }
   if (num == 3) {
-    pushEmoji("🔥");
+    pushEmoji("💍");
     emoji1.innerHTML = "";
     emoji2.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "yellow";
+  }
+  if (num == 4) {
+    pushEmoji("🍼");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "mistyrose";
+  }
+  if (num == 5) {
+    pushEmoji("🪁");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "aqua";
+  }
+  if (num == 6) {
+    pushEmoji("🎒");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "lime";
+  }
+  if (num == 7) {
+    pushEmoji("🎓");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji8.innerHTML = "";
+    emoji9.innerHTML = "";
+    body.style.backgroundColor = "blueviolet";
+  }
+  if (num == 8) {
+    pushEmoji("🚑");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji9.innerHTML = "";
     body.style.backgroundColor = "red";
-    // let click3 = emoji3.childElementCount;
-    // socket.emit('emoji3', click3);
+  }
+  if (num >= 9) {
+    pushEmoji("⚰️");
+    emoji1.innerHTML = "";
+    emoji2.innerHTML = "";
+    emoji3.innerHTML = "";
+    emoji4.innerHTML = "";
+    emoji5.innerHTML = "";
+    emoji6.innerHTML = "";
+    emoji7.innerHTML = "";
+    emoji8.innerHTML = "";
+    body.style.backgroundColor = "saddlebrown";
   }
 })
 /*
@@ -79,41 +187,3 @@ socket.on("emoji3", (click3)=>{
   }
 })
 */
-// let namebox = document.getElementById("name");
-// let chatbox = document.getElementById("chat");
-// let messagebox = document.getElementById("message");
-// let sendbutton = document.getElementById("send");
-
-// sendbutton.addEventListener("click", ()=>{
-//   console.log("clicked");
-//   let name = namebox.value.trim();
-//   if(name == ""){
-//     name = "anonymous";
-//     namebox.value = ""
-//   }
-//   let message = messagebox.value.trim();
-//   if(message != ""){
-//     let data = {name: name, message: message};
-//     socket.emit('message', data);
-//     console.log(data);
-//   }
-//   messagebox.value = "";
-// })
-//
-// socket.on("incoming", (data)=>{
-//   console.log(data);
-//   let name = data.name;
-//   let message = data.message;
-//   let li = document.createElement("li");
-//   let p = document.createElement("p");
-//   p.innerHTML = "<span class='sender'>"+name+":</span>"+message
-//   li.appendChild(p);
-//   chatbox.appendChild(li);
-//   chatbox.scrollTop = chatbox.scrollHeight;
-// })
-//
-// messagebox.addEventListener("keyup", function(event){
-//   if (event.keyCode === 13){
-//     sendbutton.click();
-//   }
-// })
