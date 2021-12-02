@@ -6,7 +6,7 @@ body{
   margin:0;
   font-weight: bold;
   font-family: sans-serif;
-  background-color: #ffe52f;
+  background-color: #d3a4ff;
 }
 p{
   margin: 0;
@@ -26,7 +26,7 @@ p{
   border:var(--borderThinkness) solid black;
   border-radius: 15px;
   padding: 15px;
-  box-shadow: 0 0 20px 20px black;
+  box-shadow: 0 0 20px 20px #6F00D2;
   background-color: white;
 }
 
@@ -67,7 +67,7 @@ p{
 }
 
 #chat li .sender{
-  color:#ff127e;
+  color: #00FFFF;
 }
 .messagebox{
   border:var(--borderThinkness) solid black;
