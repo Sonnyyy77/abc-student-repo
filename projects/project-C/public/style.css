@@ -1,5 +1,14 @@
-#note{
+#lose{
   display: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#begin{
+  /* display: none; */
   position: absolute;
   text-align: center;
   top: 50%;

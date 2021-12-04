@@ -2,83 +2,168 @@ console.log("hi");
 let socket = io();
 let ball = [];
 let users = [];
+let me = [];
 let walls = [];
-let topWall = [];
-let canvas;
-let note = document.getElementById("note");
+let lose = document.getElementById("lose");
+let begin = document.getElementById("begin");
 let restart = document.getElementById("restart");
+let myselfX = 0;
+let start = false;
+let ballData = {x:0, y:0, vx:0, vy:0};
+let userData = {id:"", x:0, y:0};
+let allUserData = {};
+let num;
 
 function setup(){
-  canvas = createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);
 
-  ball.push(new Ball(windowWidth/2, (windowHeight/4)*3+5));
+  //console.log(socket);
+  // socket.on("user_position", receive);
 
-  walls.push(new Wall(windowWidth-windowWidth/6, windowHeight/2, PI/2));
-  walls.push(new Wall(windowWidth/6, windowHeight/2, PI/2));
-  walls.push(new Wall(windowWidth/2, windowHeight/7, 0));
+  // myselfX = windowWidth/2;
 
-  topWall.push(new Wall1(windowWidth/2, windowHeight/7, 0))
+  // ball.push(new Ball(windowWidth/2, windowHeight/2+179));
 
-  for (let i = 0; i < 1; i++){
-    let u = new User(windowWidth/2, (windowHeight/4)*3+40);
-    users.push(u);
-  }
+  // walls.push(new Wall(windowWidth/2+230, windowHeight/2, PI/2));
+  // walls.push(new Wall(windowWidth/2-230, windowHeight/2, PI/2));
+  // walls.push(new Wall(windowWidth/2, windowHeight/2-230, 0));
+
+  // user.push(new Me(windowWidth/2, windowHeight/2+215));
+
+  // for (let i = 0; i < 1; i++){
+  //   let u = new User(myselfX, windowHeight/2+215);
+  //   users.push(u);
+  // }
+
+  socket.emit('number', num);
+
+
+  restart.addEventListener("click", ()=>{
+    window.location.reload();
+  })
 }
 
-restart.addEventListener("click", ()=>{
-  canvas.reset();
-})
+// restart.addEventListener("click", ()=>{
+//   canvas.reset();
+// })
 
 function draw(){
   background(255);
+
+
+  /*
   for (let i = 0; i < 1; i++){
-    ball[i].move();
+    // ball[i].move();
     ball[i].display();
-    // if (keyIsPressed == ENTER){
-    //   ball[i].move();
-    //   console.log("Key is pressed");
-    // }
   }
+  */
 
-  // console.log("brick:", users[0].x);
+  // console.log("ball", ball[0].y);
 
+
+  /*
   for (let i = ball.length - 1; i >= 0; i--) {
     let b = ball[i];
     if (b.y>=windowHeight) {
       // ball.splice(i, 1);
-      ball.y = windowHeight + 1;
-      note.style.display = "inline";
+      ball[i].y = windowHeight + 30;
+      lose.style.display = "inline";
     }
   }
+  */
 
-  // if (keyCode === ENTER) {
-  //   for (let i = 0; i < 1; i++){
-  //     ball[i].move();
-  //   }
-  // }
+  /*
+  if (start) {
+    for (let i = 0; i < 1; i++){
+      ball[i].move();
+    }
+  }*/
 
-  for (let i = 0; i < 1; i++){
-    //users[i].move();
-    users[i].update();
+  // ballData.x = ball[0].x;
+  // ballData.y = ball[0].y;
+  // ballData.vx = ball[0].vx;
+  // ballData.vy = ball[0].vy;
+
+  // for (let i = 0; i < 1; i++){
+  //   //users[i].move();
+  //   user[i].leftRight();
+  //   user[i].
+
+  for (let i = 0; i < num; i++){
+    // users[i].upDown();
+    // users[i].leftRight();
     users[i].display();
   }
 
-  for (let i = 0; i < 3; i++){
-    walls[i].display();
+  // userData.id = socket.id;
+  // userData.x = user[0].x;
+  // userData.y = user[0].y;
+
+  // for (let i = 0; i < 3; i++){
+  //   walls[i].display();
+  // }
+
+  // socket.emit('ball_position', ballData);
+  // socket.emit('user_position', userData);
+
+
+}
+
+// socket.on("ball_position", (position)=>{
+//   ball[0].x = position.x;
+//   ball[0].y = position.y;
+// });
+
+socket.on("usernumber", (usernumber)=>{
+  num = usernumber.length;
+  if (num >= 1){
+    users.push(new Me(windowWidth/2, windowHeight/2+215, 0));
+    console.log(num)
+  }
+  if (num >= 2){
+    users.push(new Me(windowWidth/2, windowHeight/2-215, 0));
+  }
+  if (num >= 3){
+    users.push(new Me(windowWidth/2+215, windowHeight/2, 0));
+  }
+  if (num >= 4){
+    users.push(new Me(windowWidth/2-215, windowHeight/2, 0));
+  }
+})
+
+function receive(data){
+  allUserData[data.id] = data;
+
+  let matched = false;
+  for (let u of users) {
+    if (data.id === u.id) {
+      users.push(new Me(windowWidth/2, windowHeight/2+215, 0));
+      // u.update(data);
+      matched = true;
+    }
   }
 
-  for (let i = 0; i < 1; i++){
-    topWall[i].display();
+  if (!matched) {
+    if (users.length == 2){
+      users.push(new Me(windowWidth/2, windowHeight/2-215, 0));
+      walls.splice(0, 1);
+    }
+    else if (users.length == 3){
+      users.push(new Me(windowWidth/2+215, windowHeight/2, PI/2));
+      walls.splice(0, 1);
+    }
+    else if (users.length == 4){
+      users.push(new Me(windowWidth/2-215, windowHeight/2, PI/2));
+      walls.splice(0, 1);
+    }
   }
 }
 
 function keyPressed() {
   if (keyCode === ENTER) {
-    // for (let i = 0; i < 1; i++){
-    //   ball[i].move();
-    // }
+    start = true;
+    begin.style.display = "none";
   }
-
 }
 
 class Ball{
@@ -95,21 +180,17 @@ class Ball{
     }
   }
   move(){
-    if (this.x <= (windowWidth/6+50) || this.x >= (windowWidth-windowWidth/6-50)){
-      if (this.y <= (windowHeight/4)*3+40){
+    if (this.x <= (windowWidth/2-180) || this.x >= (windowWidth/2+180)){
+      if (this.y <= (windowHeight/2+180)){
         this.vx *= -1;
       }
     }
-    if (this.y <= (windowHeight/7+50)){
+    if (this.y <= (windowHeight/2-180)){
       this.vy *= -1;
     }
-    else if (this.y+25 >= users[0].y && this.x >= users[0].x && this.x+20 <= users[0].x+50){
+    else if (this.y >= windowHeight/2+180 && this.y <= windowHeight/2+185 && this.x > myselfX-50 && this.x <= myselfX+50){
       this.vy *= -1;
     }
-    // console.log(this.y);
-    // if (this.y >= ((windowHeight/4)*3+6) || this.y <= (windowHeight/7+50)){
-    //   this.vy *= -1;
-    // }
     this.x += this.vx;
     this.y += this.vy;
   }
@@ -117,31 +198,57 @@ class Ball{
     fill(255, 255, 0);
     stroke(0);
     ellipse(this.x, this.y, 40);
-    // console.log("window:", windowHeight);
-    // console.log("ball:", this.y);
   }
 }
 
+/*
 class User{
-  constructor(x, y){
-    this.x = x;
-    this.y = y;
-    // this.vx = random(2, 4);
-    // this.vy = random(2, 4);
+  constructor(data){
+    this.id = data.id;
+    this.x = data.x;
+    this.y = data.y;
   }
   update(){
-    if (keyIsDown(LEFT_ARROW)) {
-      this.x -= 5;
-    }
-    if (keyIsDown(RIGHT_ARROW)) {
-      this.x += 5;
-    }
-  }
-  display(){
     fill(181, 67, 44);
     noStroke();
     rectMode(CENTER);
     rect(this.x, this.y, 100, 30);
+  }
+}
+*/
+
+class Me{
+  constructor(x, y, r){
+    // this.x = myselfX;
+    // this.id = data.id;
+    this.x = x;
+    this.y = y;
+    this.r = r;
+  }
+  leftRight(){
+    if (keyIsDown(LEFT_ARROW) && this.x > 50) {
+      this.x -= 5;
+    }
+    if (keyIsDown(RIGHT_ARROW) && this.x < windowWidth-50) {
+      this.x += 5;
+    }
+  }
+  upDown(){
+    if (keyIsDown(UP_ARROW) && this.y > 50) {
+      this.y += 5;
+    }
+    if (keyIsDown(DOWN_ARROW) && this.y < windowHeight-50) {
+      this.y -= 5;
+    }
+  }
+  display(){
+    push();
+    fill(181, 67, 44);
+    noStroke();
+    rectMode(CENTER);
+    rotate(this.r);
+    rect(this.x, this.y, 100, 30);
+    pop();
   }
 }
 
@@ -158,39 +265,16 @@ class Wall{
     rectMode(CENTER);
     translate(this.x, this.y);
     rotate(this.r);
-    rect(0, 0, (windowHeight/4*3-90), 60);
+    rect(0, 0, 400, 60);
     fill(255);
-    line(-windowHeight/8*3-45, 0, windowHeight/8*3-45, 0);
+    line(-200, 0, 200, 0);
     line(-50, 0, -50, 30);
     line(50, 0, 50, 30);
     line(0, 0, 0, -30);
     line(-100, 0, -100, -30);
     line(100, 0, 100, -30);
-    pop();
-  }
-}
-
-class Wall1{
-  constructor(x, y, r){
-    this.x = x;
-    this.y = y;
-    this.r = r;
-  }
-  display(){
-    push();
-    fill(181, 67, 44);
-    stroke(255);
-    rectMode(CENTER);
-    translate(this.x, this.y);
-    rotate(this.r);
-    rect(0, 0, (windowWidth/6*4), 60);
-    fill(255);
-    line(-windowWidth/3, 0, windowWidth/3, 0);
-    line(-windowWidth/7, 0, -windowWidth/7, 30);
-    line(windowWidth/7, 0, windowWidth/7, 30);
-    line(0, 0, 0, -30);
-    line(-windowWidth/4, 0, -windowWidth/4, -30);
-    line(windowWidth/4, 0, windowWidth/4, -30);
+    line(-150, 0, -150, 30);
+    line(150, 0, 150, 30);
     pop();
   }
 }
