@@ -8,7 +8,16 @@
 }
 
 #begin{
-  /* display: none; */
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#wait{
+  display: none;
   position: absolute;
   text-align: center;
   top: 50%;

@@ -17,6 +17,8 @@ function player(id){
   usernumber.push(id);
   // console.log("the current number of players online are: " + usernumber);
   io.emit("usernumber",usernumber);
+
+  io.emit("getID", usernumber);
   //first player start the game
   io.emit("startpeople", usernumber[0]);
 }
@@ -43,10 +45,13 @@ io.on('connection', (socket) => {
     }
     console.log('number of users', usernumber.length);
   });
-  socket.on("number", (num)=>{
-    // console.log(num);
-    io.emit("usernumber", usernumber);
-  });
+
+  io.emit("usernumber", usernumber);
+  io.emit("getID", usernumber);
+  // socket.on("number", (num)=>{
+  //   // console.log(num);
+  //   io.emit("usernumber", usernumber);
+  // });
 });
 
 
