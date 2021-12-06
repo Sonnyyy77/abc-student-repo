@@ -46,6 +46,15 @@ io.on('connection', (socket) => {
     console.log('number of users', usernumber.length);
   });
 
+  socket.on('user_position', (userData)=>{
+    // console.log(userData);
+    io.emit('upload_position', userData);
+  });
+
+  socket.on('ball_position', (ballData)=>{
+    io.emit('move_ball', ballData);
+  })
+
   io.emit("usernumber", usernumber);
   io.emit("getID", usernumber);
   // socket.on("number", (num)=>{
