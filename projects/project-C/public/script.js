@@ -18,13 +18,18 @@ let width = 520;
 let height = 520;
 let usernumber = [];
 
+// socket.on('connectToRoom',function(data){
+//          document.body.innerHTML = '';
+//          document.write(data);
+//       });
+
 function setup(){
   let canva = createCanvas(width, height);
   canva.position(windowWidth/2-260, windowHeight/2-260);
 
   ball.push(new Ball(width/2, height/2+179));
   socket.on("getID", (usernumber)=>{
-  console.log("hello",usernumber);
+  // console.log("hello",usernumber);
   });
 
   // console.log("hello",usernumber);
@@ -178,7 +183,7 @@ socket.on("usernumber", (usernumber)=>{
 })
 
 socket.on("startpeople", (id)=>{
-  console.log("start people", id);
+  // console.log("start people", id);
   if (id == socket.id){
     begin.style.display = "inline";
     wait.style.display = "none"
@@ -246,18 +251,21 @@ class Ball{
     if (this.x <= (width/2-180) || this.x >= (width/2+180)){
       this.vx *= -1;
     }
-    if (this.y <= (height/2-180)){
-      this.vy *= -1;
-    }
+    // if (this.y <= (height/2-180)){
+    //   this.vy *= -1;
+    // }
     for (let i = 0; i < users.length; i++){
       // let n = 0;
       if (users[i].id == socket.id){
         // n = i;
+        console.log("i'm", users.length);
         if (i == 0 && this.y >= height/2+180 && this.y <= height/2+185 && this.x > users[i].x-50 && this.x <= users[i].x+50){
           this.vy *= -1;
+          // console.log("x", this.x);
         }
-        if (i == 1 && this.y >= height/2-180 && this.y <= height/2-185 && this.x > users[i].x-50 && this.x <= users[i].x+50){
+        if (i == 1 && this.y <= height/2-180 && this.y >= height/2-185 && this.x > users[i].x-50 && this.x <= users[i].x+50){
           this.vy *= -1;
+          // console.log("x", this.x);
         }
       }
       // console.log("x",users[n].x-50,users[n].x+50)
@@ -319,7 +327,7 @@ class Me{
     }
     if (keyIsDown(DOWN_ARROW) && this.y < height-110) {
       this.y += 5;
-      console.log("height", height, "y", this.y);
+      // console.log("height", height, "y", this.y);
     }
   }
   getId(id){

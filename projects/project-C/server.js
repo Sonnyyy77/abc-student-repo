@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 let usernumber = [];
+let roomno = 1;
 
 app.use(express.static('public'))
 
@@ -30,6 +31,11 @@ io.on('connection', (socket) => {
   player(socket.id);
   console.log('a user connected', socket.id);
   console.log('number of users:', usernumber.length);
+
+
+  // socket.join("room-"+roomno);
+  //  //Send this event to everyone in the room.
+  //  io.sockets.in("room-"+roomno).emit('connectToRoom', "You are in room no. "+roomno);
   // let connectedUsersCount = Object.keys(io.sockets.sockets).length;
   // let connectedUsersCount = io.sockets.clients().length
 

@@ -10,6 +10,7 @@ let lights = [];
 let pieces = [];
 let targetBox;
 
+
 function setupTHREE() {
   // plane
   plane = getPlane();
@@ -208,7 +209,9 @@ function setup() {
 
 function draw() {
   noLoop();
-  rect(0, 0, 50, 100);
+  // fill(255);
+  // rect(100, 100, 50, 100);
+  console.log(mouseX, mouseY);
 }
 
 ///// three.js /////
