@@ -1,5 +1,5 @@
 # Keep The Ball Inside
-![Preview]()
+![Preview](https://github.com/Sonnyyy77/abc-student-repo/blob/master/projects/project-C/i_gif.GIF)
 
 ## Description
 Keep The Ball Inside is a multiplayer game that allows up to four players to play together. The game is inspired by the classic game *"Breakout"*. Players need to keep the ball in the middle of the “playground" by moving their paddle. In one-player mode, players will bounce the ball with three walls. Every time an additional player appears, one of the walls will turn into a paddle. Each player will control the paddle relatively on the bottom of their screen to bounce the ball.  The first player to enter will control the start and restart of the game.
