@@ -5,6 +5,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#lose_wait{
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
 #begin{
@@ -24,5 +35,56 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* #win{
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+} */
+
+#wrapper{
+/*   position: absolute; */
+  display: flex;
+
+/*   this is wrong: */
+/*   justify-items: center; */
+/*   this is right: */
+    justify-content: center;
+  align-items: center;
+/*   text-align: center; */
+  width: 100%;
+  height: 100vh;
+/*   background-color: red; */
+}
+
+#p5-canvas{
+  width: 100px;
+  height:100px;
+}
+
+#instruction{
+  text-align: center;
+  position: absolute;
+  top:5vh;
+  z-index: 1000;
+}
+
+#playerID{
+  text-align: center;
+  position: absolute;
+  top:87vh;
+  z-index: 1000;
+}
+
+#indicator{
+  text-align: center;
+  position: absolute;
+  top:83vh;
   z-index: 1000;
 }

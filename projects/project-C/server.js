@@ -4,9 +4,9 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const port = process.env.PORT;
 
 let usernumber = [];
-let roomno = 1;
 
 app.use(express.static('public'))
 
@@ -31,13 +31,13 @@ io.on('connection', (socket) => {
   player(socket.id);
   console.log('a user connected', socket.id);
   console.log('number of users:', usernumber.length);
-
-
-  // socket.join("room-"+roomno);
-  //  //Send this event to everyone in the room.
-  //  io.sockets.in("room-"+roomno).emit('connectToRoom', "You are in room no. "+roomno);
   // let connectedUsersCount = Object.keys(io.sockets.sockets).length;
   // let connectedUsersCount = io.sockets.clients().length
+
+  // if (usernumber.length <= 4){
+  //   socket.join("room1");
+  //   io.to("room1").emit('connectToRoom', "you're in room1");
+  // }
 
   //for each connection we establish an event listener
   // for when that connection disconnect
@@ -54,13 +54,23 @@ io.on('connection', (socket) => {
 
   socket.on('user_position', (userData)=>{
     // console.log(userData);
-    io.emit('upload_position', userData);
+
+
+    // changed this line:
+    // io.emit('upload_position', userData);
+    // to this line:
+    socket.broadcast.emit('upload_position', userData);
+    // see difference: https://socket.io/docs/v4/emit-cheatsheet/
+
   });
 
   socket.on('ball_position', (ballData)=>{
-    io.emit('move_ball', ballData);
+    socket.broadcast.emit('move_ball', ballData);
   })
 
+  socket.on("clear", (none)=>{
+    socket.broadcast.emit("clearCan", "none");
+  })
   io.emit("usernumber", usernumber);
   io.emit("getID", usernumber);
   // socket.on("number", (num)=>{
@@ -71,6 +81,6 @@ io.on('connection', (socket) => {
 
 
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen(port, () => {
+  console.log('listening on *:${port}');
 });
